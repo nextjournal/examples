@@ -11,6 +11,9 @@ server.serveJS(app, '/notepad/app.js', path.join(__dirname, 'notepad', 'app.js')
 // For each example we need those two lines
 server.serveStyles(app, '/ghostwriter/app.css', path.join(__dirname, 'ghostwriter', 'app.scss'));
 server.serveJS(app, '/ghostwriter/app.js', path.join(__dirname, 'ghostwriter', 'app.js'));
+server.serveJS(app, '/ghostwriter/user1.js', path.join(__dirname, 'ghostwriter', 'user1.js'));
+server.serveJS(app, '/ghostwriter/user2.js', path.join(__dirname, 'ghostwriter', 'user2.js'));
+server.serveJS(app, '/ghostwriter/hub.js', path.join(__dirname, 'ghostwriter', 'hub.js'));
 
 // Serve static files
 app.use(express.static(path.join(__dirname)));

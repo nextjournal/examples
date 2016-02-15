@@ -11,7 +11,7 @@ var $$ = Component.$$;
 var config = {
   controller: {
     components: {
-      'table': require('substance/packages/table/TableComponent2')
+      'table': require('substance/packages/table/TableComponent')
     }
   },
   bodyEditor: {

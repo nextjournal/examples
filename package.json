@@ -4,8 +4,9 @@
   "description": "Substance Examples",
   "license": "MIT",
   "dependencies": {
-    "substance": "substance/substance#14a71cb362fd8a7a669b75e231dbede31a578253",
-    "jquery": "*"
+    "jquery": "*",
+    "lodash": "4.2.1",
+    "substance": "substance/substance#14a71cb362fd8a7a669b75e231dbede31a578253"
   },
   "devDependencies": {
     "font-awesome": "4.5.0",

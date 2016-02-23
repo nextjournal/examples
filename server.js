@@ -16,7 +16,7 @@ app.use('/fonts', express.static(path.join(__dirname, 'node_modules/font-awesome
 
 app.listen(port, function() {
   console.log("Substance Examples running on port " + port);
-  console.log(`http://${host}:${port}/`);
+  console.log("http://127.0.0.1:"+port+"/");
 });
 
 // Export app for requiring in test files

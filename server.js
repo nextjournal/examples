@@ -9,6 +9,9 @@ var server = require('substance/util/server');
 server.serveStyles(app, '/notepad/app.css', path.join(__dirname, 'notepad', 'app.scss'));
 server.serveJS(app, '/notepad/app.js', path.join(__dirname, 'notepad', 'app.js'));
 
+server.serveStyles(app, '/metadata/app.css', path.join(__dirname, 'metadata', 'app.scss'));
+server.serveJS(app, '/metadata/app.js', path.join(__dirname, 'metadata', 'app.js'));
+
 // Serve static files
 app.use(express.static(path.join(__dirname)));
 app.use('/fonts', express.static(path.join(__dirname, 'node_modules/font-awesome/fonts')));

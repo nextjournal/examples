@@ -3067,46 +3067,40 @@ ol.sc-list > .sc-li.level-4::before {
   background: #eee;
   padding: 2px 0px; }
 
-.sc-mark {
-  background: rgba(234, 231, 35, 0.3); }
-
-.sc-todo {
-  padding-left: 20px;
-  padding-bottom: 20px;
-  position: relative; }
-  .sc-todo .se-done {
-    display: inline-block;
-    width: 20px;
-    cursor: pointer;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-    position: absolute;
-    left: 0px; }
-
-/* Shared demo styles */
 body {
-  background: #f1f1f1;
-  padding: 30px;
   overflow: hidden; }
 
-.footer {
+.sc-two-editors {
   position: absolute;
-  left: 10px;
-  bottom: 10px;
-  right: 10px; }
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; }
 
-.sc-notepad {
-  position: fixed;
-  top: 10px;
-  bottom: 40px;
-  left: 10px;
-  right: 10px;
-  border: 1px solid #ddd;
-  background: white;
-  color: #222; }
+.sc-editor .sc-surface {
+  padding: 20px; }
 
-.sc-container-editor {
-  padding: 20px;
-  overflow: auto; }
+.sc-editor.left-editor {
+  border-right: 1px solid #ccc; }
+
+.se-status {
+  height: 30px;
+  font-size: 12px;
+  padding: 0px 10px;
+  line-height: 30px;
+  background: #eee; }
+  .se-status .se-left {
+    float: left; }
+  .se-status .se-right {
+    float: right; }
+  .se-status button {
+    display: inline-block; }
+
+/*
+ overriding user colors on the right side to give a better visual distinction
+*/
+.sc-editor.right-editor .sc-text-property .se-cursor.sm-user-1 {
+  outline-color: green; }
+
+.sc-editor.right-editor .sc-text-property .se-selection-fragment.sm-user-1 {
+  background: green; }

@@ -8,7 +8,7 @@ var CollabClient = require('substance/collab/CollabClient');
 var TestWebSocketConnection = require('substance/test/collab/TestWebSocketConnection');
 
 var Icon = require('substance/ui/FontAwesomeIcon');
-var twoParagraphs = require('substance/test/fixtures/collab/two-paragraphs');
+var twoParagraphs = require('./fixture');
 var TestCollabServer = require('substance/test/collab/TestCollabServer');
 
 var DocumentStore = require('substance/collab/DocumentStore');
@@ -165,6 +165,41 @@ TwoEditors.Prototype = function() {
       )
     );
     return el;
+  };
+
+  this.didRender = function() {
+    var leftEditor = this.refs.left;
+    var surface = leftEditor.getSurface('bodyEditor');
+    var commander = surface.commander;
+
+    commander.bind('/', function(){
+      console.log('SINGLE KEY SHORTCUT');
+      surface.transaction(function(tx, args) {
+        args.text = "Yay! Congrats! You've just run single key shortcut using ";
+        return surface.insertText(tx, args);
+      });
+    });
+    commander.bind('shift+alt+c', function(){
+      console.log('COMBO SHORTCUT');
+      surface.transaction(function(tx, args) {
+        args.text = "Exactly! This is what we called combo!";
+        return surface.insertText(tx, args);
+      });
+    });
+    commander.bind('h e l l o', function(){
+      console.log('SEQUENCE SHORTCUT');
+      surface.transaction(function(tx, args) {
+        args.text = "Hello from sequencer! ;)";
+        return surface.insertText(tx, args);
+      });
+    });
+    commander.bind('t e s t meta+alt+t', function(){
+      console.log('SEQUENCE WITH COMBO');
+      surface.transaction(function(tx, args) {
+        args.text = "It was hard to type fast, didn't it?";
+        return surface.insertText(tx, args);
+      });
+    });
   };
 
   this._processNextMessage = function() {
